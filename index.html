@@ -1,0 +1,441 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maulana Malik — Rekayasa Perangkat Lunak</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jetblack: '#0a0a0a',
+                        charcoal: '#141414',
+                        carddark: '#1a1a1a',
+                        accentpink: '#ff2d75',
+                        chromesilver: '#e2e8f0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon / Logo Tab -->
+    <link rel="icon" type="image/png" href="icon.jpg">
+</head>
+<body class="bg-jetblack text-chromesilver font-sans antialiased selection:bg-accentpink selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-display font-bold text-xl tracking-wider text-white flex items-center gap-2">
+                <span class="text-accentpink">MAULANA</span> MALIK
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#about" class="hover:text-accentpink transition-colors">Tentang</a>
+                <a href="#skills" class="hover:text-accentpink transition-colors">Keahlian</a>
+                <a href="#projects" class="hover:text-accentpink transition-colors">Proyek</a>
+                <a href="#certificates" class="hover:text-accentpink transition-colors">Sertifikat</a>
+                <a href="#contact" class="hover:text-accentpink transition-colors">Kontak</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="bg-white text-jetblack hover:bg-accentpink hover:text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300">
+                    Hubungi Saya
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-charcoal border-b border-white/10 px-6 py-6 flex flex-col gap-4 shadow-2xl">
+            <a href="#about" class="mobile-link text-lg font-medium hover:text-accentpink">Tentang</a>
+            <a href="#skills" class="mobile-link text-lg font-medium hover:text-accentpink">Keahlian</a>
+            <a href="#projects" class="mobile-link text-lg font-medium hover:text-accentpink">Proyek</a>
+            <a href="#certificates" class="mobile-link text-lg font-medium hover:text-accentpink">Sertifikat</a>
+            <a href="#contact" class="mobile-link text-lg font-medium hover:text-accentpink">Kontak</a>
+            <a href="#contact" class="mobile-link mt-2 text-center bg-accentpink text-white py-3 rounded-xl font-semibold">Hubungi Saya</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen pt-32 pb-16 px-6 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accentpink/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+            
+            <!-- Foto Profil Hero -->
+            <div class="relative mb-8 group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-accentpink to-purple-600 rounded-full blur opacity-50 group-hover:opacity-80 transition duration-500"></div>
+                <img src="WhatsApp Image 2026-11-10 at 08.26.58.jpeg" alt="Maulana Malik Profile" class="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-2 border-white/20 shadow-2xl">
+            </div>
+
+            <!-- Badge Status -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider uppercase mb-6 text-accentpink">
+                <span class="w-2 h-2 rounded-full bg-accentpink animate-pulse"></span> SISWA RPL SMK DARUUL ABROOR & FOUNDER LVN WORLD
+            </div>
+
+            <!-- Judul Utama -->
+            <h1 class="font-display font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white mb-6 leading-tight">
+                Belajar Pemrograman & <br class="hidden sm:inline"><span class="chrome-text">Mengembangkan Website Modern</span>
+            </h1>
+
+            <!-- Deskripsi Singkat -->
+            <p class="max-w-2xl mx-auto text-sm sm:text-base text-chromesilver/80 mb-10 leading-relaxed">
+                Halo, Saya <strong class="text-white">Maulana Malik</strong>. Pelajar jurusan Rekayasa Perangkat Lunak (RPL) yang sedang mendalami pengembangan web, pemrograman PHP, serta merintis proyek kreatif <strong class="text-white">MALVEN STUDIO</strong>.
+            </p>
+
+            <!-- Tombol Aksi -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                <a href="#projects" class="w-full sm:w-auto bg-accentpink hover:bg-accentpink/90 text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 glow-pink flex items-center justify-center gap-3 text-sm">
+                    <span>Lihat Proyek</span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/15 text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-3 text-sm">
+                    <span>Hubungi Saya</span>
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+<section id="about" class="py-24 px-6 bg-charcoal/50 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-accentpink to-purple-600 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-carddark border border-white/10 rounded-3xl p-6 overflow-hidden">
+                        <img src="WhatsApp Image 2026-11-10 at 08.26.58.jpeg" alt="Maulana Malik" class="w-full h-80 object-cover object-top rounded-2xl mb-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-accentpink font-bold">Profil Pelajar</span>
+                            <h3 class="font-display font-bold text-xl text-white mt-1">SMK Daruul Abroor</h3>
+                        </div>
+                        <p class="text-xs text-chromesilver/70 leading-relaxed mt-2">
+                            Terus belajar dan berlatih merakit kode pemrograman secara bertahap.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-7 space-y-6">
+                <h2 class="text-xs uppercase tracking-widest text-accentpink font-bold">Tentang Saya</h2>
+                <h3 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
+                    Proses Belajar & Berkembang di Dunia Pemrograman.
+                </h3>
+                <p class="text-chromesilver/80 leading-relaxed">
+                    Halo, Saya <strong class="text-white">Maulana Malik</strong>. Saya adalah siswa jurusan Rekayasa Perangkat Lunak (RPL) di <strong class="text-white">SMK Daruul Abroor</strong>.
+                </p>
+                <p class="text-chromesilver/80 leading-relaxed">
+                    Saat ini, saya sedang mendalami dan mempelajari dasar-dasar pemrograman web, seperti HTML, CSS, JavaScript, serta penggunaan PHP dan basis data MySQL. Pembuatan website portofolio ini merupakan bagian dari proses belajar saya untuk mengasah keterampilan di bidang IT.
+                </p>
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <div class="bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-accentpink"></i> Tasikmalaya, Indonesia
+                    </div>
+                    <div class="bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-accentpink"></i> Siswa RPL SMK Daruul Abroor
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Tech Stack / Skills Section -->
+<section id="skills" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-xs uppercase tracking-widest text-accentpink font-bold mb-3">Keahlian</h2>
+            <h3 class="font-display font-bold text-3xl sm:text-4xl text-white">Teknologi & Tools</h3>
+            <p class="text-chromesilver/70 mt-3 text-sm">Teknologi utama yang saya gunakan untuk membangun aplikasi web modern.</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="bg-carddark border border-white/10 hover:border-accentpink/50 transition-all duration-300 p-6 rounded-2xl flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl text-accentpink mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h4 class="font-semibold text-white text-base">PHP / Laravel</h4>
+                <p class="text-xs text-chromesilver/60 mt-1">Backend & MVC</p>
+            </div>
+
+            <div class="bg-carddark border border-white/10 hover:border-accentpink/50 transition-all duration-300 p-6 rounded-2xl flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl text-accentpink mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-js"></i>
+                </div>
+                <h4 class="font-semibold text-white text-base">JavaScript</h4>
+                <p class="text-xs text-chromesilver/60 mt-1">Vanilla & ES6+</p>
+            </div>
+
+            <div class="bg-carddark border border-white/10 hover:border-accentpink/50 transition-all duration-300 p-6 rounded-2xl flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl text-accentpink mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <h4 class="font-semibold text-white text-base">MySQL</h4>
+                <p class="text-xs text-chromesilver/60 mt-1">Eloquent & SQL</p>
+            </div>
+
+            <div class="bg-carddark border border-white/10 hover:border-accentpink/50 transition-all duration-300 p-6 rounded-2xl flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl text-accentpink mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-git-alt"></i>
+                </div>
+                <h4 class="font-semibold text-white text-base">Git & GitHub</h4>
+                <p class="text-xs text-chromesilver/60 mt-1">Version Control</p>
+            </div>
+
+            <div class="bg-carddark border border-white/10 hover:border-accentpink/50 transition-all duration-300 p-6 rounded-2xl flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl text-accentpink mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+                <h4 class="font-semibold text-white text-base">HTML5 & CSS3</h4>
+                <p class="text-xs text-chromesilver/60 mt-1">Tailwind CSS</p>
+            </div>
+
+            <div class="bg-carddark border border-white/10 hover:border-accentpink/50 transition-all duration-300 p-6 rounded-2xl flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl text-accentpink mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h4 class="font-semibold text-white text-base">Laragon / XAMPP</h4>
+                <p class="text-xs text-chromesilver/60 mt-1">Local Server</p>
+            </div>
+
+            <div class="bg-carddark border border-white/10 hover:border-accentpink/50 transition-all duration-300 p-6 rounded-2xl flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl text-accentpink mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h4 class="font-semibold text-white text-base">VS Code</h4>
+                <p class="text-xs text-chromesilver/60 mt-1">Editor Kode</p>
+            </div>
+
+            <div class="bg-carddark border border-white/10 hover:border-accentpink/50 transition-all duration-300 p-6 rounded-2xl flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl text-accentpink mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+                <h4 class="font-semibold text-white text-base">Desain Grafis / Kaos</h4>
+                <p class="text-xs text-chromesilver/60 mt-1">Tahap Belajar / Hobi</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+    <section id="projects" class="py-24 px-6 bg-charcoal/50 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-accentpink font-bold mb-3">Portofolio</h2>
+                <h3 class="font-display font-bold text-3xl sm:text-4xl text-white">Proyek Unggulan</h3>
+                <p class="text-chromesilver/70 mt-3 text-sm">Beberapa aplikasi web, game edukasi, dan proyek kreatif yang dikembangkan secara profesional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Sistem Manajemen Perpustakaan (Ujikom) -->
+                <div class="bg-carddark border border-white/10 rounded-3xl overflow-hidden hover:border-accentpink/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="Screenshot 2026-11-10 105222.png" alt="Sistem Perpustakaan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-accentpink/10 text-accentpink">Laravel 12</span>
+                                <i class="fa-solid fa-book text-chromesilver/60"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-white mb-2 group-hover:text-accentpink transition-colors">Sistem Manajemen Perpustakaan</h4>
+                            <p class="text-xs text-chromesilver/70 leading-relaxed mb-4">
+                                Aplikasi manajemen perpustakaan sekolah berbasis Laravel dengan fitur pengolahan basis data relasional dan agregasi peminjaman.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">PHP</span>
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">MySQL</span>
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white/[0.02] border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-chromesilver/50">Proyek Ujikom</span>
+                        <a href="https://drive.google.com/file/d/1mbJlV5XRXQw4cEYYs6enHTBX83S1Hi7V/view?usp=sharing" target="_blank" class="text-xs font-semibold text-white hover:text-accentpink flex items-center gap-1 transition-colors">
+                            <span>Unduh / Cek File</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Platform LVN WORLD -->
+                <div class="bg-carddark border border-white/10 rounded-3xl overflow-hidden hover:border-accentpink/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="Screenshot 2026-11-10 104445.png" alt="Platform LVN WORLD" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-accentpink/10 text-accentpink">E-Commerce & Branding</span>
+                                <i class="fa-solid fa-shirt text-chromesilver/60"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-white mb-2 group-hover:text-accentpink transition-colors">Platform LVN WORLD</h4>
+                            <p class="text-xs text-chromesilver/70 leading-relaxed mb-4">
+                                Landing page & platform pemasaran produk streetwear interaktif yang telah di-deploy secara publik di GitHub Pages.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">HTML5 / CSS3</span>
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">JavaScript</span>
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">GitHub Pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white/[0.02] border-t border-white/10 flex items-center justify-between gap-2">
+                        <a href="https://github.com/lvnworld26/lvn.world" target="_blank" class="text-xs font-semibold text-chromesilver/70 hover:text-white flex items-center gap-1 transition-colors">
+                            <span>Code</span>
+                            <i class="fa-solid fa-code text-[10px]"></i>
+                        </a>
+                        <a href="https://lvnworld26.github.io/lvn.world/" target="_blank" class="text-xs font-semibold text-white hover:text-accentpink flex items-center gap-1 transition-colors">
+                            <span>Demo Live</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Game Tebak Kata IPAS (Tugas Kelompok) -->
+                <div class="bg-carddark border border-white/10 rounded-3xl overflow-hidden hover:border-accentpink/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative bg-black/40 flex items-center justify-center">
+                            <i class="fa-solid fa-puzzle-piece text-5xl text-accentpink/50"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-accentpink/10 text-accentpink">Tugas Kelompok & IPAS</span>
+                                <i class="fa-solid fa-gamepad text-chromesilver/60"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-xl text-white mb-2 group-hover:text-accentpink transition-colors">Game Tebak Kata Interaktif</h4>
+                            <p class="text-xs text-chromesilver/70 leading-relaxed mb-4">
+                                Proyek game edukasi bertema IPAS hasil kerja kelompok di mana saya dipercaya untuk merancang dan membangun logika pemrograman permainannya.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">Logika Pemrograman</span>
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">JavaScript / Logika</span>
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-chromesilver/80">Media Pembelajaran</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white/[0.02] border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-chromesilver/50">Kolaborasi Kelompok</span>
+                        <a href="https://drive.google.com/file/d/1TDema0PL3-OLks5WXXL69Wo_uRn1ZUk2/view?usp=sharing" target="_blank" class="text-xs font-semibold text-white hover:text-accentpink flex items-center gap-1 transition-colors">
+                            <span>Unduh / Cek File</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates & Achievements Section -->
+    <section id="certificates" class="py-24 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-accentpink font-bold mb-3">Pencapaian</h2>
+                <h3 class="font-display font-bold text-3xl sm:text-4xl text-white">Sertifikat & Hackathon</h3>
+                <p class="text-chromesilver/70 mt-3 text-sm">Dokumentasi sertifikasi resmi, keikutsertaan kompetisi, dan pengalaman hackathon.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certificate 1 -->
+                <div class="bg-carddark border border-white/10 rounded-2xl overflow-hidden hover:border-accentpink/50 transition-all duration-300 group">
+                    <div class="h-44 overflow-hidden relative cursor-pointer certificate-item" data-img="Maulana Malik.png" data-caption="Global Game Jam 2025 Certificate">
+                        <img src="Maulana Malik.png" alt="Global Game Jam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-sm font-medium gap-2">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Sertifikat
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] font-mono text-accentpink uppercase tracking-wider">Januari 2025</span>
+                        <h4 class="font-display font-bold text-lg text-white mt-1">Global Game Jam 2025</h4>
+                        <p class="text-xs text-chromesilver/60 mt-1">Peserta Hackathon Internasional (Aqua Escape)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 bg-charcoal/50 border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-accentpink font-bold mb-3">Kontak</h2>
+                <h3 class="font-display font-bold text-3xl sm:text-4xl text-white">Kirimkan Pesan Anda</h3>
+                <p class="text-chromesilver/70 mt-3 text-sm">Punya pertanyaan, ide kolaborasi, atau ingin berdiskusi mengenai proyek web? Silakan isi formulir di bawah ini.</p>
+            </div>
+
+            <div class="bg-carddark border border-white/10 p-8 sm:p-12 rounded-3xl">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase font-semibold tracking-wider text-chromesilver/70 mb-2">Nama Anda</label>
+                            <input type="text" id="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-chromesilver/30 focus:outline-none focus:border-accentpink transition-colors text-sm" placeholder="Nama Lengkap">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-semibold tracking-wider text-chromesilver/70 mb-2">Email Anda</label>
+                            <input type="email" id="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-chromesilver/30 focus:outline-none focus:border-accentpink transition-colors text-sm" placeholder="email@contoh.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-semibold tracking-wider text-chromesilver/70 mb-2">Pesan</label>
+                        <textarea id="message" rows="5" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-chromesilver/30 focus:outline-none focus:border-accentpink transition-colors text-sm resize-none" placeholder="Tuliskan pesan atau detail proyek Anda..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-accentpink hover:bg-accentpink/90 text-white font-semibold py-4 rounded-xl transition-all duration-300 glow-pink flex items-center justify-center gap-2">
+                        <span>Kirim Pesan</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/10 bg-charcoal text-center sm:text-left">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+
+                <p class="text-xs text-chromesilver/60 mt-1">© 2026 Maulana Malik - Rekayasa Perangkat Lunak. Hak Cipta Dilindungi.</p>
+            </div>
+            <div class="flex items-center gap-6 text-xl">
+                <a href="https://www.instagram.com/mlnmlk27?obrf=MTU5cWRiZTlyamhwbQ==" target="_blank" class="text-chromesilver/70 hover:text-accentpink transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@maulanamlk29?_r=1&_t=ZS-9BHViRJmlEa" target="_blank" class="text-chromesilver/70 hover:text-accentpink transition-colors" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=maulanamalik02927@gmail.com" target="_blank" class="text-chromesilver/70 hover:text-accentpink transition-colors" title="Kirim Email via Gmail"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 hidden backdrop-blur-md flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full flex flex-col items-center">
+            <button id="close-lightbox" class="absolute -top-12 right-0 text-white hover:text-accentpink text-2xl font-bold focus:outline-none">
+                <i class="fa-solid fa-xmark"></i> Tutup
+            </button>
+            <img id="lightbox-img" src="" alt="Sertifikat Preview" class="max-h-[80vh] w-auto rounded-xl border border-white/20 shadow-2xl object-contain">
+            <p id="lightbox-caption" class="text-white text-sm font-medium mt-4 font-display"></p>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
